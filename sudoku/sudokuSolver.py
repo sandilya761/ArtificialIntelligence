@@ -98,7 +98,6 @@ def search(grid_dict):
 
 if __name__ == '__main__':
     
-    # this is the worlds' hardest sudoku puzzle
     start = '8..........36......7..9.2...5...7.......457.....1...3...1....68..85...1..9....4..'
     # start = '..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..'
     
@@ -124,14 +123,18 @@ if __name__ == '__main__':
     assert len(start) == 81
     grid_dict = dict(zip(boxes, start))
 
+    # display unsolved board
+    display(grid_dict)
+    print('\n'*2)
+    
     # replacing the dots(.) with '123456789' (possible values in the box)
     for k,v in grid_dict.items():
         if v == '.':
             grid_dict[k] = '123456789'
             
-    display(grid_dict)
-    solved_grid = search(grid_dict)
+    # solved_grid = search(grid_dict)
 
-    # display(grid_dict)
+    solved_grid = eliminate(grid_dict)
+    # display solved baord
     display(solved_grid)
 
