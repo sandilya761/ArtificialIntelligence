@@ -1,0 +1,11 @@
+!pip install ipynb
+
+and then import the other notebook as
+
+from ipynb.fs.full.<notebook_name> import *
+
+or
+
+from ipynb.fs.full.<notebook_name> import <function_name>
+
+Make sure that all the notebooks are in the same directory.
